@@ -23,7 +23,7 @@
 			],
 			"transformations": [
 				{
-					"name": "filter1"
+					"name": "FilterSales"
 				}
 			],
 			"scriptLines": [
@@ -41,8 +41,8 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source1",
-				"source1 filter(toInteger(UnitPrice) > 3000) ~> filter1",
-				"filter1 sink(allowSchemaDrift: true,",
+				"source1 filter(toInteger(UnitPrice) > 3000) ~> FilterSales",
+				"FilterSales sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     umask: 0022,",
 				"     preCommands: [],",
